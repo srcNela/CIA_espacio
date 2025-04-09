@@ -16,7 +16,7 @@ function generateInfoView(data) {
   container.innerHTML = '';
   
   const categories = {};
-  data.frameworks.forEach(fw => {
+  data.forEach(fw => {
     if (!categories[fw.category]) categories[fw.category] = [];
     categories[fw.category].push(fw);
   });
@@ -53,7 +53,7 @@ function generateLogicView(data) {
   const container = document.getElementById('logicView');
   container.innerHTML = '';
   
-  data.frameworks.forEach(fw => {
+  data.forEach(fw => {
     const item = document.createElement('div');
     item.className = 'logic-item';
     item.innerHTML = `
@@ -71,7 +71,7 @@ function generateSimulationView(data) {
   const container = document.getElementById('simulateView');
   container.innerHTML = '';
   
-  data.frameworks.forEach(fw => {
+  data.forEach(fw => {
     if (!fw.simulations?.length) return;
     
     const card = document.createElement('div');
@@ -157,3 +157,4 @@ function setupNavigation() {
       views[viewId].classList.add('active');
     });
   });
+}
