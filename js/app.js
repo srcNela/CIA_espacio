@@ -1,7 +1,7 @@
 
 // Initialize application
 window.addEventListener('DOMContentLoaded', () => {
-  generateViews(frameworksData);
+  generateViews(frameworks);
   setupNavigation();
 });
 
